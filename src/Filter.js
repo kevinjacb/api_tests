@@ -34,7 +34,6 @@ function DropDown(props) {
                 options={props.options}
                 onChange={onSelect}
                 placeholder={props.placeHolder}
-                key={props.key}
             />
         </div>
     );

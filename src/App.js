@@ -60,7 +60,7 @@ function MainScreen(props) { // depends on the number of columns from the api ca
   };
 
   const hidePopUp = () => { // hides the popup
-    setShowPopup({ showPopUp: false, popUpData: "" });
+    setShowPopup({ showPopUp: false, popUpData: "", type: "" });
   };
 
 

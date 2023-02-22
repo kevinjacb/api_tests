@@ -68,11 +68,6 @@
 
 .dropdown1,
 .dropdown2 {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  align-items: center;
-  justify-content: center;
   background-color: white;
   padding: 2%;
   padding-left: 10%;
@@ -81,7 +76,7 @@
   font-weight: bold;
   color: rgb(73, 69, 69);
 
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.2);
 }
 
 
@@ -92,27 +87,11 @@
 }
 
 .Dropdown-placeholder {
-  border-bottom: 1px solid grey;
+  border-bottom: 3px solid grey;
 }
 
 
-.dropdown-sub-item {
-  width: max-content;
-  font-weight: bold;
-  font-size: 1.2em;
-  margin: 0.5%;
-  padding: 0.5%;
-}
 
-.dropdown-sub-item:hover {
-  background-image: linear-gradient(to right, rgb(255, 255, 255), rgb(210, 244, 255), rgb(255, 255, 255));
-}
-
-.dropdown-sub {
-  display: flex;
-  flex-direction: column;
-
-}
 
 /* ##################### TABLE VIEW ##################### */
 

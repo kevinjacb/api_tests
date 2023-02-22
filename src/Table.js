@@ -58,7 +58,7 @@ function _TablePopUp(props) { // TODO: popup for table view
         }
     }
 
-
+    console.log("sort", sortOption);
     console.log("aft", data);
 
     return <div id="table-popup-blur" onClick={hide}>
@@ -71,13 +71,13 @@ function _TablePopUp(props) { // TODO: popup for table view
             {(type == 'user_id') ?
                 <div id="dropdown-container" onClick={(event) => { event.stopPropagation(); }}>
                     <text className="dropdown-label"> Sort: </text>
-                    <DropDown options={sortOptions} placeHolder="None" callback={setSortOption} rootClass="dropdown1" key={1} />
+                    <DropDown options={sortOptions} placeHolder="None" callback={setSortOption} rootClass="dropdown1" />
                     <span id="space"></span>
                     <text className="dropdown-label"> Filter: </text>
-                    <DropDown options={filterOptions} placeHolder="None" callback={setFilterOption} rootClass="dropdown2" key={2} />
+                    <DropDown options={filterOptions} placeHolder="None" callback={setFilterOption} rootClass="dropdown2" />
                 </div>
                 : null}
-            <TableView titles={titles} data={data} />
+            <TableView titles={titles} data={data} type={type} />
         </div>
     </div>
 }

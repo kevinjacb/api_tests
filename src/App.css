@@ -2,18 +2,47 @@
 .App {
   width: 100%;
   height: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   background-color: rgba(243, 244, 246);
+  overflow: hidden;
 }
 
+.App::-webkit-scrollbar {
+  display: none;
+}
 
 /* ##################### TOP BAR ##################### */
 #top-bar {
+  display: flex;
+  flex-direction: row;
   height: 15vh;
-  width: 100vh;
+  width: 100vw;
+  align-items: center;
+  background-image: linear-gradient(to right, black, rgb(65, 10, 153));
+  margin-bottom: 1%;
+  justify-content: space-between;
+  padding: 0 30px;
 }
+
+#main-title {
+  color: rgb(233, 218, 218);
+  margin-left: 10%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 3em;
+  font-weight: bolder;
+}
+
+.social-icon {
+  animation-delay: 500ms;
+}
+
+.social-icon:hover {
+  scale: 1.1;
+}
+
 
 /* ##################### FILTER  ##################### */
 
@@ -21,11 +50,11 @@
   display: flex;
   flex-direction: row;
   position: absolute;
-  top: 5%;
+  top: 3%;
   right: 5%;
 }
 
-#dropdown-label {
+.dropdown-label {
   margin-right: 15px;
   margin-top: 10px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -33,21 +62,19 @@
   color: grey;
 }
 
-.dropdown-sub {
-  border-left: 5px solid rgba(0, 0, 0, 0.1);
-  padding: 4%;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: grey;
+#space {
+  margin-left: 5%;
 }
 
-#dropdown {
+.dropdown1,
+.dropdown2 {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
   align-items: center;
   justify-content: center;
   background-color: white;
-  padding: 5%;
+  padding: 2%;
   padding-left: 10%;
   padding-right: 10%;
   border-radius: 10px;
@@ -56,6 +83,7 @@
 
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
 }
+
 
 
 .Dropdown-root {
@@ -88,16 +116,28 @@
 
 /* ##################### TABLE VIEW ##################### */
 
-#table-view {
+#main-screen {
+  display: flex;
+  justify-content: center;
   width: 90%;
-  height: 80%;
   align-self: center;
+  padding: 5px;
 }
 
+.table-view {
+  width: 100%;
+  height: 100%;
+  max-height: 78vh;
+  overflow-y: scroll;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.table-view::-webkit-scrollbar {
+  display: none;
+}
 
 table {
   background-color: rgb(231, 231, 231);
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
   width: 100%;
   padding: 2%;
   border-collapse: collapse;
@@ -127,6 +167,7 @@ td.table-data-row {
 }
 
 .table-title-row {
+  position: -webkit-sticky;
   background-color: rgb(221, 221, 221);
   color: rgb(153, 153, 153);
   border-bottom: 1px solid rgba(178, 182, 190);
@@ -142,4 +183,73 @@ td.table-data-row {
 .table-data-item-selectable:hover {
   background-image: linear-gradient(to right, rgb(255, 255, 255), rgb(210, 244, 255), rgb(255, 255, 255));
   border-radius: 10px;
+}
+
+
+/* ##################### POPUP ##################### */
+
+#table-popup {
+  position: absolute;
+  top: 25vh;
+  left: 5vw;
+  width: 90vw;
+  height: 90vh;
+}
+
+#table-popup-blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  overflow: hidden;
+}
+
+#table-popup-details {
+  width: 100%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.4em;
+  font-weight: bold;
+  color: bisque;
+}
+
+.table-popup-common-details {
+  background-color: rgba(0, 0, 0, 0.7);
+  margin-right: 1%;
+  height: max-content;
+  border-radius: 20px;
+  padding: 1%;
+}
+
+.details-desc {
+  color: rgb(255, 255, 255) !important;
+}
+
+.active {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+  background-color: green;
+  padding: 3%;
+  padding-left: 10%;
+  padding-right: 10%;
+  border-radius: 20px;
+  color: white;
+}
+
+.inactive {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
+  background-color: red;
+  padding: 3%;
+  padding-left: 10%;
+  padding-right: 10%;
+  border-radius: 20px;
+  color: white;
+}
+
+#popup-loading {
+
+  color: grey;
 }

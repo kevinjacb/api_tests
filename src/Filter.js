@@ -1,6 +1,7 @@
 import react, { useState } from 'react';
 import ReactDropdown from 'react-dropdown';
 
+
 function DropDown(props) {
 
     //states 0 -> all, 1 -> active, 2 -> inactive type = user
